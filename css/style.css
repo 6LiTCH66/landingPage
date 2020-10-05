@@ -1,0 +1,98 @@
+:root{
+    --dark-color:rgba(5, 87, 73, 0.699);
+    --medium-color: rgba(255, 255, 255, 0.808);
+    --light-color: rgba(14, 140, 179, 0.63);
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    padding: 2rem;
+    
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to bottom right,
+     var(--light-color), var(--dark-color)), 
+    url("../img/land1.jpg");
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 79%, 0% 100%);
+    color: var(--medium-color);
+}
+
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.heading-primary{
+    text-transform: uppercase;
+}
+.heading-primary-main{
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.5;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+@keyframes moveInLeft{
+    0% {transform: translateX(-100px); opacity: 0;}
+    80% {transform: translateX(20px);}
+    100% { transform: translateX(0); opacity: 1;}
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+
+}
+
+@keyframes moveInRight{
+    0% {transform: translateX(100px); opacity: 0;}
+    80% {transform: translateX(-20px);}
+    100% { transform: translateX(0); opacity: 1;}
+}
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #fff;
+    color: #fff;
+    opacity: 0;
+    animation-name: btnAnim;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    transition-property: transform;
+    transition-duration: 3s;
+    text-transform: none;
+    font-size: 24px;
+    background-color: rgba(8, 160, 114, 0.74);
+
+}
+
+@keyframes btnAnim {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.btn:hover {
+    transform: rotateY(180deg);
+}
